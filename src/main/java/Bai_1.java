@@ -32,15 +32,12 @@ public class Bai_1 {
     }
 
     public static String changeChar(String s) {
-        String re = "";
-        String[] arrS = s.split(".");
-
-        for (int i = 0; i < arrS.length; i++) {
-            arrS[i].trim();
-            re += arrS[i].substring(0, 1).toUpperCase();
-            re += arrS[i].substring(1) + " ";
+        char[] arr = s.toCharArray();
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] == '.')
+                arr[i + 2] = Character.toUpperCase(arr[i + 2]);
         }
-        return re;
+        return String.valueOf(arr);
     }
 
     public static void main(String[] args) {
